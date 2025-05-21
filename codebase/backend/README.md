@@ -1,131 +1,125 @@
-# Energy Payment API
+# ⚡ Energy Payment API
 
-A modern Node.js API for managing energy accounts and processing payments. This service provides endpoints to fetch energy accounts with their balances and process credit card payments.
+A modern Node.js API for managing energy accounts and handling payments. This project offers endpoints to fetch energy accounts (with balances) and process credit card payments — all built with performance and simplicity in mind.
 
-## Table of Contents
+## ✨ Features
 
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Getting Started](#getting-started)
-- [Available Scripts](#available-scripts)
-- [Testing Strategy](#testing-strategy)
-- [Design Decisions](#design-decisions)
-- [Assumptions](#assumptions)
-- [Future Improvements](#future-improvements)
+- ✅ Fetch energy accounts with up-to-date balances  
+- ✅ Handle credit card payments  
+- ✅ Use mock services to simulate external dependencies  
+- ✅ Full test coverage  
+- ✅ Written in TypeScript for safety and clarity  
+- ✅ Clean and modular architecture
 
-## Features
+---
 
-- ✅ Fetch energy accounts with calculated balances
-- ✅ Process credit card payments
-- ✅ Mock implementations of downstream services
-- ✅ Comprehensive test coverage
-- ✅ TypeScript for type safety
-- ✅ Clean architecture with separation of concerns
+## 🛠️ Tech Stack
 
-## Technology Stack
+- **Node.js** – Runtime  
+- **Express.js** – API framework  
+- **TypeScript** – Static typing  
+- **pnpm** – Package manager  
+- **Vitest** – Testing framework  
+- **ESLint & Prettier** – Code quality and formatting
 
-- **Runtime**: Node.js
-- **Framework**: Express.js
-- **Language**: TypeScript
-- **Package Manager**: pnpm
-- **Testing**: Vitest
-- **Linting**: ESLint
-- **Formatting**: Prettier
+---
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (v18 or later)
-- pnpm (v10 or later)
+- Node.js v18+
+- pnpm v10+
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/energy-payment-api.git
-   cd energy-payment-api
+```bash
+git clone https://github.com/macaja/code-challenge.git
+cd backend
+pnpm install
+```
+## 📜 Scripts
 
-2. Install dependencies:
-   ```bash
-   pnpm install
-   ```
+Here are the common scripts you’ll use while developing:
 
-## Available Scripts
+| Command               | Description                            |
+|-----------------------|----------------------------------------|
+| `pnpm start`          | Run the dev server (with hot reload)   |
+| `pnpm build`          | Build for production                   |
+| `pnpm test`           | Run all tests                          |
+| `pnpm test:watch`     | Run tests in watch mode                |
+| `pnpm test:coverage`  | Run tests and see coverage report      |
+| `pnpm lint`           | Run ESLint to catch issues             |
+| `pnpm lint:fix`       | Auto-fix lint issues                   |
+| `pnpm format`         | Format code with Prettier              |
 
-- `pnpm start` - Start the development server with hot reloading
-- `pnpm build` - Build the project for production
-- `pnpm test` - Run tests
-- `pnpm test:watch` - Run tests in watch mode
-- `pnpm test:coverage` - Run tests with coverage reporting
-- `pnpm lint` - Run ESLint
-- `pnpm lint:fix` - Fix ESLint issues
-- `pnpm format` - Format code with Prettier
+---
 
-## Testing Strategy
+## 🧪 Testing Approach
 
-This project uses Vitest for testing. Tests are organized alongside the code they're testing to maintain proximity and discoverability.
+We use **Vitest** for testing. All tests are colocated with the code they test for better organization and discoverability.
 
 ### Types of Tests
 
-- **Unit Tests**: Test individual functions and classes in isolation
-- **Integration Tests**: Test the interaction between components
-- **API Tests**: Test the API endpoints using Supertest
+- **Unit Tests** – For isolated functions and logic  
+- **Integration Tests** – To test interaction between components  
+- **API Tests** – Verify endpoint behavior using Supertest
 
-### Running Tests
+### Run Tests
 
 ```bash
 # Run all tests
 pnpm test
 
-# Run tests in watch mode
+# Watch mode
 pnpm test:watch
 
-# Run tests with coverage
+# With coverage
 pnpm test:coverage
 ```
 
-## Design Decisions
+## 🎯 Design Decisions
 
 ### Why pnpm?
 
-We chose pnpm as our package manager for several reasons:
-
-1. **Disk Space Efficiency**: pnpm uses a content-addressable store, which saves disk space by not duplicating dependencies.
-2. **Strict Dependencies**: pnpm creates a more accurate dependency tree, preventing "phantom dependencies".
-3. **Performance**: pnpm is generally faster than npm and yarn for installation.
-4. **Workspace Support**: Built-in support for monorepos without additional tools.
-
+- 🧠 Smarter dependency management with better disk efficiency  
+- 🚫 Prevents hidden dependencies (phantom deps)  
+- ⚡ Faster installs  
+- 🧩 Built-in monorepo/workspace support  
 
 ### Why Vitest?
 
-Vitest was chosen over Jest for these reasons:
+- 🚀 Extremely fast (especially for TypeScript)  
+- 🧪 Great ESM and TypeScript support  
+- 🔁 Smooth watch mode with HMR  
+- 🔧 Easy migration from Jest  
 
-1. **Performance**: Vitest is significantly faster than Jest, especially for TypeScript projects.
-2. **ESM Support**: Native support for ECMAScript modules without transpilation.
-3. **Watch Mode**: Faster watch mode with hot module replacement.
-4. **TypeScript Integration**: Better TypeScript support out of the box.
-5. **API Compatibility**: Vitest is largely compatible with Jest's API, making migration easy.
+---
 
-## Assumptions
+## 🔍 Assumptions
 
-1. **Account Balances**: The balance for an account is the sum of all charges (positive and negative).
-2. **Due Date**: The due date is the earliest date of any positive charge.
-3. **Payment Processing**: Payments are applied to charges in chronological order.
-4. **Credit Card Validation**: Basic validation is performed on credit card numbers.
-5. **Negative Charges**: Negative charge amounts represent credits to the account.
+- **Account balance** = sum of all charges (positive or negative)  
+- **Due date** = earliest date of any positive charge  
+- **Payments** are applied in chronological order of charges  
+- **Credit card validation** is basic (format checks only)  
+- **Negative charges** represent credits to the account  
 
-## Future Improvements
+---
 
-1. **Authentication & Authorization**: Implement JWT-based authentication and role-based access control.
-2. **Database Integration**: Replace mock services with real database connections (e.g., PostgreSQL).
-3. **API Documentation**: Add OpenAPI/Swagger documentation for the API.
-4. **Pagination**: Add pagination support for account and charge endpoints.
-5. **Caching**: Implement response caching to improve performance.
-6. **Logging**: Add structured logging
-7. **Metrics**: Add metrics for monitoring.
-8. **CI/CD Pipeline**: Set up GitHub Actions for continuous integration and deployment.
-9. **Docker Support**: Add Docker and Docker Compose for containerization.
-10. **Rate Limiting**: Implement rate limiting to prevent abuse.
-11. **Add githooks**: Create some ops to validate linting, prettier and tests are satisfied before pushing.
-12. **ops**: Add operation scripts so devs can easily setup local environment and get started easily.
+## 🔮 Future Improvements
+
+- 🔐 Add JWT auth + RBAC  
+- 🗃️ Connect to a real database (e.g. PostgreSQL)  
+- 📖 Add Swagger/OpenAPI docs  
+- 📦 Add pagination for account/charges  
+- ⚡ Introduce caching  
+- 📈 Add structured logging and monitoring  
+- 🧪 Integrate CI/CD (GitHub Actions)  
+- 🐳 Add Docker/Docker Compose support  
+- 🚦 Rate limiting for abuse prevention  
+- 🧩 Add Git hooks for pre-push validations (lint, format, tests)  
+- 🧰 Add scripts to bootstrap local dev setup quickly  
+
+## 🤔 Considerations
+
+I have not much experience with Node.js but I decided to do it with Express as a learning opportunity for the challenge.
