@@ -3,6 +3,7 @@
 import { AccountType } from '../types';
 
 interface FilterByEnergyTypeProps {
+  // eslint-disable-next-line no-unused-vars
   onFilterChange: (energyType: AccountType | undefined) => void;
 }
 

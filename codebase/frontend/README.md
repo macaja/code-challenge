@@ -11,14 +11,12 @@ This is a simple React application that allows users to view their energy accoun
 - **ESLint & Prettier** - Code quality and formatting
 - **Husky** - Git hooks for pre-commit checks
 
-
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js (v16 or higher)
 - pnpm (v7 or higher)
-
 
 ### Installation
 
@@ -29,13 +27,11 @@ git clone https://github.com/macaja/code-challenge.git
 cd frontend
 ```
 
-
 2. Install dependencies
 
 ```shellscript
 pnpm install
 ```
-
 
 3. Start the development server
 
@@ -43,9 +39,7 @@ pnpm install
 pnpm dev
 ```
 
-
 4. Open your browser and navigate to `http://localhost:5173`
-
 
 ## How to Use
 
@@ -58,13 +52,11 @@ The home page displays a list of your energy accounts. Each account is shown as 
 - Meter number
 - Balance (color-coded: green for positive, red for negative, grey for zero)
 
-
 You can:
 
 - Filter accounts by energy type using the dropdown
 - Search accounts by address using the search bar
 - Click "Make a Payment" to pay your bill
-
 
 ### Payment Modal
 
@@ -73,7 +65,6 @@ When you click "Make a Payment", a modal appears where you can:
 - See your account details and balance
 - Enter your credit card information
 - Submit your payment
-
 
 After a successful payment, you'll see a confirmation message.
 
@@ -84,7 +75,6 @@ Click "View Payment History" to see a list of all past payments. The payment his
 - Payment date
 - Account information
 - Payment amount
-
 
 You can search through payment history by address.
 
@@ -99,7 +89,6 @@ To modify the mock data:
 1. Open `src/services/accountsService.ts` for account data
 2. Open `src/services/paymentsService.ts` for payment history data
 
-
 ### Code Quality
 
 We use Husky to enforce code quality before commits:
@@ -107,7 +96,6 @@ We use Husky to enforce code quality before commits:
 - Code formatting with Prettier
 - Linting with ESLint
 - Running tests
-
 
 To skip these checks (not recommended):
 
@@ -125,7 +113,6 @@ During development, I made the following assumptions:
 4. The color-coding of balances would help users quickly understand their account status
 5. For the payment form, a simple credit card input would be sufficient (in a real app, we'd use a secure payment processor)
 
-
 ## Future Improvements
 
 Given more time, I would add:
@@ -141,12 +128,12 @@ Given more time, I would add:
 9. **Payment Confirmation** - Send email confirmations for payments
 10. **Account Details Page** - Add a detailed view for each account
 
-
 ## Project Structure
 
 ```plaintext
 frontend/
 ├── src/
+|   ├── __tests__/
 │   ├── components/       # Reusable UI components
 │   ├── hooks/            # Custom React hooks
 │   ├── pages/            # Page components
@@ -156,7 +143,7 @@ frontend/
 │   ├── utils.ts          # Utility functions
 │   ├── App.tsx           # Main app component
 │   └── main.tsx          # Entry point
-├── .eslintrc.js          # ESLint configuration
+├── eslint.config.js      # ESLint configuration
 ├── .prettierrc           # Prettier configuration
 ├── .husky/               # Git hooks
 ├── index.html            # HTML template

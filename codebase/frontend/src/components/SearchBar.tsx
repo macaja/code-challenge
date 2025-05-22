@@ -1,6 +1,7 @@
 'use client';
 
 interface SearchBarProps {
+  // eslint-disable-next-line no-unused-vars
   onSearch: (query: string) => void;
 }
 

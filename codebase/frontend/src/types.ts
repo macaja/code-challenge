@@ -1,5 +1,7 @@
 export enum AccountType {
+  // eslint-disable-next-line no-unused-vars
   ELECTRICITY = 'ELECTRICITY',
+  // eslint-disable-next-line no-unused-vars
   GAS = 'GAS',
 }
 
